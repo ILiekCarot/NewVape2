@@ -16,7 +16,7 @@ local function downloadFile(path, func)
 	end
 	return (func or readfile)(path)
 end
-local run = function(func) func() end
+
 local cloneref = cloneref or function(obj) return obj end
 
 local playersService = cloneref(game:GetService('Players'))
@@ -104,7 +104,7 @@ local function notif(...)
 	return vape:CreateNotification(...)
 end
 
-run(function()
+task.spawn(function()
 	entitylib.getUpdateConnections = function(ent)
 		local hum = ent.Humanoid
 		return {
@@ -144,7 +144,7 @@ run(function()
 end)
 entitylib.start()
 
-run(function()
+task.spawn(function()
 	local function dumpRemotes(scripts, renamed)
 		local returned = {}
 
@@ -367,7 +367,7 @@ end)
 for _, v in {'Reach', 'TriggerBot', 'Disabler', 'AntiFall', 'HitBoxes', 'Killaura', 'MurderMystery'} do
 	vape:Remove(v)
 end
-run(function()
+task.spawn(function()
 	local SilentAim
 	local Target
 	local Mode
@@ -521,7 +521,7 @@ run(function()
 	Instant = SilentAim:CreateToggle({Name = 'Hitscan Bullets'})
 end)
 	
-run(function()
+task.spawn(function()
 	local Wallbang = {Enabled = false}
 	
 	Wallbang = vape.Categories.Combat:CreateModule({
@@ -551,7 +551,7 @@ run(function()
 	})
 end)
 	
-run(function()
+task.spawn(function()
 	local AutoArrest = {Enabled = false}
 	
 	AutoArrest = vape.Categories.Blatant:CreateModule({
@@ -589,7 +589,7 @@ run(function()
 	})
 end)
 	
-run(function()
+task.spawn(function()
 	local AutoPop
 	local Range
 	local HandCheck
@@ -673,7 +673,7 @@ run(function()
 	TeamCheck = AutoPop:CreateToggle({Name = 'Team Check'})
 end)
 	
-run(function()
+task.spawn(function()
 	local Punch = {Enabled = false}
 	
 	Punch = vape.Categories.Blatant:CreateModule({
@@ -692,7 +692,7 @@ run(function()
 	})
 end)
 	
-run(function()
+task.spawn(function()
 	local AutoTaze = {Enabled = false}
 	local AutoTazeHandCheck = {Enabled = false}
 	
@@ -727,11 +727,11 @@ run(function()
 	AutoTazeHandCheck = AutoTaze:CreateToggle({Name = 'Hand Check'})
 end)
 	
-run(function()
+task.spawn(function()
 	LazerGodmode = vape.Categories.Blatant:CreateModule({Name = 'LazerGodmode'})
 end)
 	
-run(function()
+task.spawn(function()
 	vape.Categories.Blatant:CreateModule({
 		Name = 'NoFall',
 		Function = function(callback)
@@ -741,7 +741,7 @@ run(function()
 	})
 end)
 	
-run(function()
+task.spawn(function()
 	local InfiniteNitro
 	local nitrotable = debug.getupvalue(jb.VehicleController.NitroShopVisible, 1)
 	local oldnitro
@@ -765,7 +765,7 @@ run(function()
 	})
 end)
 	
-run(function()
+task.spawn(function()
 	vape.Categories.Utility:CreateModule({
 		Name = 'InstantAction',
 		Function = function(callback)
@@ -775,7 +775,7 @@ run(function()
 	})
 end)
 	
-run(function()
+task.spawn(function()
 	vape.Categories.Utility:CreateModule({
 		Name = 'KeySpoofer',
 		Function = function(callback)

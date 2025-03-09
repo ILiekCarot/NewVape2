@@ -1,4 +1,4 @@
-local run = function(func) func() end
+
 local cloneref = cloneref or function(obj) return obj end
 
 local playersService = cloneref(game:GetService('Players'))
@@ -42,7 +42,7 @@ local function parsePositions(v, func)
 	end
 end
 
-run(function()
+task.spawn(function()
 	local Knit = require(replicatedStorage.Modules.Knit.Client)
 	if not debug.getupvalue(Knit.Start, 1) then
 		repeat task.wait() until debug.getupvalue(Knit.Start, 1)
@@ -103,7 +103,7 @@ end)
 for _, v in {'Reach', 'SilentAim', 'Disabler', 'HitBoxes', 'MurderMystery', 'AutoRejoin'} do
 	vape:Remove(v)
 end
-run(function()
+task.spawn(function()
 	local AutoClicker
 	local CPS
 	
@@ -131,7 +131,7 @@ run(function()
 	})
 end)
 	
-run(function()
+task.spawn(function()
 	local Reach
 	local Value
 	local old
@@ -163,7 +163,7 @@ run(function()
 	})
 end)
 	
-run(function()
+task.spawn(function()
 	local Velocity = {Enabled = false}
 	local VelocityHorizontal = {Value = 100}
 	local VelocityVertical = {Value = 100}
@@ -227,7 +227,7 @@ run(function()
 	VelocityTargeting = Velocity:CreateToggle({Name = 'Only when targeting'})
 end)
 	
-run(function()
+task.spawn(function()
 	local old
 	
 	vape.Categories.Blatant:CreateModule({
@@ -250,7 +250,7 @@ run(function()
 	})
 end)
 	
-run(function()
+task.spawn(function()
 	local Killaura
 	local Targets
 	local CPS
@@ -561,7 +561,7 @@ run(function()
 	})
 end)
 	
-run(function()
+task.spawn(function()
 	local old
 	
 	vape.Categories.Blatant:CreateModule({
@@ -578,7 +578,7 @@ run(function()
 	})
 end)
 	
-run(function()
+task.spawn(function()
 	local old
 	
 	vape.Categories.Blatant:CreateModule({
@@ -601,7 +601,7 @@ run(function()
 	})
 end)
 	
-run(function()
+task.spawn(function()
 	local AutoPlay
 	local Delay
 	
@@ -620,7 +620,7 @@ run(function()
 	})
 end)
 	
-run(function()
+task.spawn(function()
 	local Scaffold
 	local Expand
 	local Tower
@@ -790,7 +790,7 @@ run(function()
 	LimitItem = Scaffold:CreateToggle({Name = 'Limit to items'})
 end)
 	
-run(function()
+task.spawn(function()
 	local Breaker
 	local Value
 	local OnlyPlayer

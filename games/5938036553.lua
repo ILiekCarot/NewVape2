@@ -26,9 +26,7 @@ local function downloadFile(path, func)
 	end
 	return (func or readfile)(path)
 end
-local run = function(func) 
-	func() 
-end
+
 local cloneref = cloneref or function(obj) 
 	return obj 
 end
@@ -156,7 +154,7 @@ local function isFriend(plr, recolor)
 	return nil
 end
 
-run(function()
+task.spawn(function()
 	repeat
 		local gc = getgc(true)
 		for _, v in gc do
@@ -250,7 +248,7 @@ run(function()
 	end)
 end)
 
-run(function()
+task.spawn(function()
 	entitylib.Wallcheck = function(origin, position, ignoreobject)
 		local ray = workspace.Raycast(workspace, origin, (position - origin), frontlines.ShootRay)
 		return ray and ray.Instance and (ray.Instance == workspace.Terrain or ray.Instance:IsDescendantOf(workspace.workspace)) or false
@@ -368,7 +366,7 @@ for i, v in {'Reach', 'Health', 'TriggerBot', 'AntiFall', 'AntiRagdoll', 'Invisi
 	vape:Remove(v)
 end
 
-run(function()
+task.spawn(function()
 	local AimAssist
 	local FOV
 	local Speed
@@ -503,7 +501,7 @@ run(function()
 	
 end)
 	
-run(function()
+task.spawn(function()
 	local SilentAim
 	local Target
 	local Mode
@@ -692,7 +690,7 @@ run(function()
 	})
 end)
 	
-run(function()
+task.spawn(function()
 	local Sprint
 	
 	Sprint = vape.Categories.Combat:CreateModule({
@@ -719,7 +717,7 @@ run(function()
 	})
 end)
 	
-run(function()
+task.spawn(function()
 	local GrenadeTP
 	local Range
 	
@@ -766,7 +764,7 @@ run(function()
 	})
 end)
 	
-run(function()
+task.spawn(function()
 	local Reload
 	local Recoil
 	local Spread
@@ -825,7 +823,7 @@ run(function()
 	Automatic = GunModifications:CreateToggle({Name = 'Full Automatic'})
 end)
 	
-run(function()
+task.spawn(function()
 	local Killaura
 	local Targets
 	local SwingRange
@@ -1114,7 +1112,7 @@ run(function()
 	})
 end)
 	
-run(function()
+task.spawn(function()
 	local Phase
 	
 	Phase = vape.Categories.Blatant:CreateModule({
@@ -1140,7 +1138,7 @@ run(function()
 	})
 end)
 	
-run(function()
+task.spawn(function()
 	local SpinBot
 	local Speed
 	local Yaw
@@ -1207,7 +1205,7 @@ run(function()
 	})
 end)
 	
-run(function()
+task.spawn(function()
 	local GrenadeESP
 	local Background
 	local Color = {}
@@ -1296,7 +1294,7 @@ run(function()
 	})
 end)
 	
-run(function()
+task.spawn(function()
 	local NoHurtCam
 	
 	NoHurtCam = vape.Categories.Render:CreateModule({
@@ -1312,7 +1310,7 @@ run(function()
 	})
 end)
 	
-run(function()
+task.spawn(function()
 	local ThirdPerson
 	local Distance
 	local hook = false
@@ -1386,7 +1384,7 @@ run(function()
 	})
 end)
 	
-run(function()
+task.spawn(function()
 	local AutoRespawn
 	
 	AutoRespawn = vape.Categories.Utility:CreateModule({
@@ -1404,7 +1402,7 @@ run(function()
 	})
 end)
 	
-run(function()
+task.spawn(function()
 	local ChatSpammer
 	local Lines
 	local Mode
@@ -1440,7 +1438,7 @@ run(function()
 	})
 end)
 	
-run(function()
+task.spawn(function()
 	local PickupRange
 	local Range
 	local pickupdelay = tick()
@@ -1477,7 +1475,7 @@ run(function()
 	})
 end)
 	
-run(function()
+task.spawn(function()
 	local BulletTracers
 	local Material
 	local Color

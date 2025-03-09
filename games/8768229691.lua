@@ -1,6 +1,4 @@
-local run = function(func)
-	func()
-end
+
 local cloneref = cloneref or function(obj)
 	return obj
 end
@@ -167,7 +165,7 @@ local function waitForChildOfType(obj, name, timeout, prop)
 	return returned
 end
 
-run(function()
+task.spawn(function()
 	entitylib.addPlayer = function(plr)
 		if plr.Character then
 			entitylib.refreshEntity(plr.Character, plr)
@@ -272,7 +270,7 @@ run(function()
 end)
 entitylib.start()
 
-run(function()
+task.spawn(function()
 	local Flamework = require(replicatedStorage['rbxts_include']['node_modules']['@flamework'].core.out).Flamework
 	local ControllerTable = {}
 
@@ -404,7 +402,7 @@ end)
 for _, v in {'Reach', 'TriggerBot', 'Disabler', 'SilentAim', 'AutoRejoin', 'Rejoin', 'ServerHop', 'MurderMystery'} do
 	vape:Remove(v)
 end
-run(function()
+task.spawn(function()
 	local AutoClicker
 	local CPS
 	local Blocks
@@ -476,7 +474,7 @@ run(function()
 	})
 end)
 	
-run(function()
+task.spawn(function()
 	local Sprint
 	local old
 	
@@ -512,7 +510,7 @@ run(function()
 	})
 end)
 	
-run(function()
+task.spawn(function()
 	local Velocity
 	local Horizontal
 	local Vertical
@@ -580,7 +578,7 @@ run(function()
 	Targeting = Velocity:CreateToggle({Name = 'Only when targeting'})
 end)
 	
-run(function()
+task.spawn(function()
 	local AntiFall
 	local Mode
 	local Material
@@ -666,7 +664,7 @@ run(function()
 	})
 end)
 	
-run(function()
+task.spawn(function()
 	local InvMove
 	local old
 	
@@ -688,7 +686,7 @@ run(function()
 	})
 end)
 	
-run(function()
+task.spawn(function()
 	local Killaura
 	local Targets
 	local AttackRange
@@ -1030,7 +1028,7 @@ run(function()
 	})
 end)
 	
-run(function()
+task.spawn(function()
 	local NoFall
 	local rayCheck = RaycastParams.new()
 	
@@ -1061,7 +1059,7 @@ run(function()
 	})
 end)
 	
-run(function()
+task.spawn(function()
 	local old, old2
 	
 	vape.Categories.Blatant:CreateModule({
@@ -1098,7 +1096,7 @@ run(function()
 	})
 end)
 	
-run(function()
+task.spawn(function()
 	local TargetPart
 	local FOV
 	local old, oldMobile
@@ -1160,7 +1158,7 @@ run(function()
 	})
 end)
 	
-run(function()
+task.spawn(function()
 	local ProjectileAura
 	local Targets
 	local Range
@@ -1237,7 +1235,7 @@ run(function()
 	})
 end)
 	
-run(function()
+task.spawn(function()
 	local Scaffold
 	local Expand
 	local Tower
@@ -1380,7 +1378,7 @@ run(function()
 	LimitItem = Scaffold:CreateToggle({Name = 'Limit to items'})
 end)
 	
-run(function()
+task.spawn(function()
 	local ChestSteal
 	local Range
 	local Open
@@ -1428,7 +1426,7 @@ run(function()
 	Open = ChestSteal:CreateToggle({Name = 'GUI Check'})
 end)
 	
-run(function()
+task.spawn(function()
 	local AutoBuy
 	local Sword
 	local Armor
@@ -1539,7 +1537,7 @@ run(function()
 	end
 end)
 	
-run(function()
+task.spawn(function()
 	local AutoConsume
 	
 	local function consumeCheck()
@@ -1563,7 +1561,7 @@ run(function()
 	})
 end)
 	
-run(function()
+task.spawn(function()
 	local Breaker
 	local Range
 	local BreakerPart
@@ -1726,7 +1724,7 @@ run(function()
 	})
 end)
 	
-run(function()
+task.spawn(function()
 	local Viewmodel
 	local oldtool
 	

@@ -1,6 +1,4 @@
-local run = function(func)
-	func()
-end
+
 local cloneref = cloneref or function(obj)
 	return obj
 end
@@ -428,7 +426,7 @@ local sortmethods = {
 	end
 }
 
-run(function()
+task.spawn(function()
 	local oldstart = entitylib.start
 	local function customEntity(ent)
 		if ent:HasTag('inventory-entity') and not ent:HasTag('Monster') then
@@ -631,7 +629,7 @@ run(function()
 end)
 entitylib.start()
 
-run(function()
+task.spawn(function()
 	local KnitInit, Knit
 	repeat
 		KnitInit, Knit = pcall(function()
@@ -1170,7 +1168,7 @@ end)
 for _, v in {'AntiRagdoll', 'TriggerBot', 'SilentAim', 'AutoRejoin', 'Rejoin', 'Disabler', 'Timer', 'ServerHop', 'MouseTP', 'MurderMystery'} do
 	vape:Remove(v)
 end
-run(function()
+task.spawn(function()
 	local AimAssist
 	local Targets
 	local Sort
@@ -1255,7 +1253,7 @@ run(function()
 	StrafeIncrease = AimAssist:CreateToggle({Name = 'Strafe increase'})
 end)
 	
-run(function()
+task.spawn(function()
 	local AutoClicker
 	local CPS
 	local BlockCPS = {}
@@ -1350,7 +1348,7 @@ run(function()
 	})
 end)
 	
-run(function()
+task.spawn(function()
 	local old
 	
 	vape.Categories.Combat:CreateModule({
@@ -1370,7 +1368,7 @@ run(function()
 	})
 end)
 	
-run(function()
+task.spawn(function()
 	local Value
 	
 	Reach = vape.Categories.Combat:CreateModule({
@@ -1396,7 +1394,7 @@ run(function()
 	})
 end)
 	
-run(function()
+task.spawn(function()
 	local Sprint
 	local old
 	
@@ -1435,7 +1433,7 @@ run(function()
 	})
 end)
 	
-run(function()
+task.spawn(function()
 	local TriggerBot
 	local CPS
 	local rayParams = RaycastParams.new()
@@ -1487,7 +1485,7 @@ run(function()
 	})
 end)
 	
-run(function()
+task.spawn(function()
 	local Velocity
 	local Horizontal
 	local Vertical
@@ -1548,7 +1546,7 @@ run(function()
 end)
 	
 local AntiFallDirection
-run(function()
+task.spawn(function()
 	local AntiFall
 	local Mode
 	local Material
@@ -1686,7 +1684,7 @@ run(function()
 	})
 end)
 	
-run(function()
+task.spawn(function()
 	local FastBreak
 	local Time
 	
@@ -1716,7 +1714,7 @@ end)
 	
 local Fly
 local LongJump
-run(function()
+task.spawn(function()
 	local Value
 	local VerticalValue
 	local WallCheck
@@ -1863,7 +1861,7 @@ run(function()
 	})
 end)
 	
-run(function()
+task.spawn(function()
 	local Mode
 	local Expand
 	local objects, set = {}
@@ -1951,7 +1949,7 @@ run(function()
 	})
 end)
 	
-run(function()
+task.spawn(function()
 	local Value
 	local VerticalValue
 	local WallCheck
@@ -2169,7 +2167,7 @@ run(function()
 	})
 end)
 	
-run(function()
+task.spawn(function()
 	vape.Categories.Blatant:CreateModule({
 		Name = 'KeepSprint',
 		Function = function(callback)
@@ -2181,7 +2179,7 @@ run(function()
 end)
 	
 local Attacking
-run(function()
+task.spawn(function()
 	local Killaura
 	local Targets
 	local Sort
@@ -2666,7 +2664,7 @@ run(function()
 	})
 end)
 	
-run(function()
+task.spawn(function()
 	local Value
 	local CameraDir
 	local start
@@ -2895,7 +2893,7 @@ run(function()
 	})
 end)
 	
-run(function()
+task.spawn(function()
 	vape.Categories.Blatant:CreateModule({
 		Name = 'NoFall',
 		Function = function(callback)
@@ -2907,7 +2905,7 @@ run(function()
 	})
 end)
 	
-run(function()
+task.spawn(function()
 	local old
 	
 	vape.Categories.Blatant:CreateModule({
@@ -2937,7 +2935,7 @@ run(function()
 	})
 end)
 	
-run(function()
+task.spawn(function()
 	local TargetPart
 	local Targets
 	local FOV
@@ -3031,7 +3029,7 @@ run(function()
 	})
 end)
 	
-run(function()
+task.spawn(function()
 	local ProjectileAura
 	local Targets
 	local Range
@@ -3146,7 +3144,7 @@ run(function()
 	})
 end)
 	
-run(function()
+task.spawn(function()
 	local Speed
 	local Value
 	local WallCheck
@@ -3224,7 +3222,7 @@ run(function()
 	})
 end)
 	
-run(function()
+task.spawn(function()
 	local BedESP
 	local Reference = {}
 	local Folder = Instance.new('Folder')
@@ -3286,7 +3284,7 @@ run(function()
 	})
 end)
 	
-run(function()
+task.spawn(function()
 	local Health
 	
 	Health = vape.Categories.Render:CreateModule({
@@ -3314,7 +3312,7 @@ run(function()
 	})
 end)
 	
-run(function()
+task.spawn(function()
 	local KitESP
 	local Background
 	local Color = {}
@@ -3415,7 +3413,7 @@ run(function()
 	})
 end)
 	
-run(function()
+task.spawn(function()
 	local NameTags
 	local Targets
 	local Color
@@ -3853,7 +3851,7 @@ run(function()
 	})
 end)
 	
-run(function()
+task.spawn(function()
 	local StorageESP
 	local List
 	local Background
@@ -3992,7 +3990,7 @@ run(function()
 	})
 end)
 	
-run(function()
+task.spawn(function()
 	local AutoBalloon
 	
 	AutoBalloon = vape.Categories.Utility:CreateModule({
@@ -4030,7 +4028,7 @@ run(function()
 	})
 end)
 	
-run(function()
+task.spawn(function()
 	local AutoKit
 	local Legit
 	local Toggles = {}
@@ -4427,7 +4425,7 @@ run(function()
 	end
 end)
 	
-run(function()
+task.spawn(function()
 	local AutoPearl
 	local rayCheck = RaycastParams.new()
 	rayCheck.RespectCanCollide = true
@@ -4485,7 +4483,7 @@ run(function()
 	})
 end)
 	
-run(function()
+task.spawn(function()
 	local AutoPlay
 	local Random
 	
@@ -4529,7 +4527,7 @@ run(function()
 	})
 end)
 	
-run(function()
+task.spawn(function()
 	local shooting, old = false
 	
 	local function getCrossbows()
@@ -4577,7 +4575,7 @@ run(function()
 	
 end)
 	
-run(function()
+task.spawn(function()
 	local AutoToxic
 	local GG
 	local Toggles, Lists, said, dead = {}, {}, {}
@@ -4670,7 +4668,7 @@ run(function()
 	end
 end)
 	
-run(function()
+task.spawn(function()
 	local AutoVoidDrop
 	local OwlCheck
 	
@@ -4724,7 +4722,7 @@ run(function()
 	})
 end)
 	
-run(function()
+task.spawn(function()
 	local MissileTP
 	
 	MissileTP = vape.Categories.Utility:CreateModule({
@@ -4765,7 +4763,7 @@ run(function()
 	})
 end)
 	
-run(function()
+task.spawn(function()
 	local PickupRange
 	local Range
 	local Network
@@ -4828,7 +4826,7 @@ run(function()
 	Lower = PickupRange:CreateToggle({Name = 'Feet Check'})
 end)
 	
-run(function()
+task.spawn(function()
 	local RavenTP
 	
 	RavenTP = vape.Categories.Utility:CreateModule({
@@ -4870,7 +4868,7 @@ run(function()
 	})
 end)
 	
-run(function()
+task.spawn(function()
 	local Scaffold
 	local Expand
 	local Tower
@@ -5044,7 +5042,7 @@ run(function()
 	})
 end)
 	
-run(function()
+task.spawn(function()
 	local ShopTierBypass
 	local tiered, nexttier = {}, {}
 	
@@ -5076,7 +5074,7 @@ run(function()
 	})
 end)
 	
-run(function()
+task.spawn(function()
 	local StaffDetector
 	local Mode
 	local Clans
@@ -5238,14 +5236,14 @@ run(function()
 	end)
 end)
 	
-run(function()
+task.spawn(function()
 	TrapDisabler = vape.Categories.Utility:CreateModule({
 		Name = 'TrapDisabler',
 		Tooltip = 'Disables Snap Traps'
 	})
 end)
 	
-run(function()
+task.spawn(function()
 	vape.Categories.World:CreateModule({
 		Name = 'Anti-AFK',
 		Function = function(callback)
@@ -5269,7 +5267,7 @@ run(function()
 	})
 end)
 	
-run(function()
+task.spawn(function()
 	local AutoSuffocate
 	local Range
 	local LimitItem
@@ -5340,7 +5338,7 @@ run(function()
 	})
 end)
 	
-run(function()
+task.spawn(function()
 	local AutoTool
 	local old, event
 	
@@ -5386,7 +5384,7 @@ run(function()
 	})
 end)
 	
-run(function()
+task.spawn(function()
 	local BedProtector
 	
 	local function getBedNear()
@@ -5452,7 +5450,7 @@ run(function()
 	})
 end)
 	
-run(function()
+task.spawn(function()
 	local ChestSteal
 	local Range
 	local Open
@@ -5531,7 +5529,7 @@ run(function()
 	})
 end)
 	
-run(function()
+task.spawn(function()
 	local Schematica
 	local File
 	local Mode
@@ -5757,7 +5755,7 @@ run(function()
 	})
 end)
 	
-run(function()
+task.spawn(function()
 	local ArmorSwitch
 	local Mode
 	local Targets
@@ -5823,7 +5821,7 @@ run(function()
 	})
 end)
 	
-run(function()
+task.spawn(function()
 	local AutoBuy
 	local Sword
 	local Armor
@@ -6158,7 +6156,7 @@ run(function()
 	})
 end)
 	
-run(function()
+task.spawn(function()
 	local AutoConsume
 	local Health
 	local SpeedPotion
@@ -6238,7 +6236,7 @@ run(function()
 	})
 end)
 	
-run(function()
+task.spawn(function()
 	local AutoHotbar
 	local Mode
 	local Clear
@@ -6818,7 +6816,7 @@ run(function()
 	List = AutoHotbar:CreateHotbarList({})
 end)
 	
-run(function()
+task.spawn(function()
 	local Value
 	local oldclickhold, oldshowprogress
 	
@@ -6890,7 +6888,7 @@ run(function()
 	})
 end)
 	
-run(function()
+task.spawn(function()
 	local FastDrop
 	
 	FastDrop = vape.Categories.Inventory:CreateModule({
@@ -6911,7 +6909,7 @@ run(function()
 	})
 end)
 	
-run(function()
+task.spawn(function()
 	local BedPlates
 	local Background
 	local Color = {}
@@ -7048,7 +7046,7 @@ run(function()
 	})
 end)
 	
-run(function()
+task.spawn(function()
 	local Breaker
 	local Range
 	local UpdateRate
@@ -7315,7 +7313,7 @@ run(function()
 	})
 end)
 	
-run(function()
+task.spawn(function()
 	vape.Legit:CreateModule({
 		Name = 'Clean Kit',
 		Function = function(callback)
@@ -7331,7 +7329,7 @@ run(function()
 	})
 end)
 	
-run(function()
+task.spawn(function()
 	local old
 	local Image
 	
@@ -7366,7 +7364,7 @@ run(function()
 	})
 end)
 	
-run(function()
+task.spawn(function()
 	local DamageIndicator
 	local FontOption
 	local Color
@@ -7462,7 +7460,7 @@ run(function()
 	})
 end)
 	
-run(function()
+task.spawn(function()
 	local FOV
 	local Value
 	local old, old2
@@ -7495,7 +7493,7 @@ run(function()
 	})
 end)
 	
-run(function()
+task.spawn(function()
 	local FPSBoost
 	local Kill
 	local Visualizer
@@ -7573,7 +7571,7 @@ run(function()
 	})
 end)
 	
-run(function()
+task.spawn(function()
 	local HitColor
 	local Color
 	local done = {}
@@ -7611,7 +7609,7 @@ run(function()
 	})
 end)
 	
-run(function()
+task.spawn(function()
 	vape.Legit:CreateModule({
 		Name = 'HitFix',
 		Function = function(callback)
@@ -7622,7 +7620,7 @@ run(function()
 	})
 end)
 	
-run(function()
+task.spawn(function()
 	local Interface
 	local HotbarOpenInventory = require(lplr.PlayerScripts.TS.controllers.global.hotbar.ui['hotbar-open-inventory']).HotbarOpenInventory
 	local HotbarHealthbar = require(lplr.PlayerScripts.TS.controllers.global.hotbar.ui.healthbar['hotbar-healthbar']).HotbarHealthbar
@@ -7713,7 +7711,7 @@ run(function()
 	})
 end)
 	
-run(function()
+task.spawn(function()
 	local KillEffect
 	local Mode
 	local List
@@ -7879,7 +7877,7 @@ run(function()
 	})
 end)
 	
-run(function()
+task.spawn(function()
 	local ReachDisplay
 	local label
 	
@@ -7925,7 +7923,7 @@ run(function()
 	corner.Parent = label
 end)
 	
-run(function()
+task.spawn(function()
 	local SongBeats
 	local List
 	local FOV
@@ -8043,7 +8041,7 @@ run(function()
 	})
 end)
 	
-run(function()
+task.spawn(function()
 	local SoundChanger
 	local List
 	local soundlist = {}
@@ -8084,7 +8082,7 @@ run(function()
 	})
 end)
 	
-run(function()
+task.spawn(function()
 	local UICleanup
 	local OpenInv
 	local KillFeed
@@ -8237,7 +8235,7 @@ run(function()
 	})
 end)
 	
-run(function()
+task.spawn(function()
 	local Viewmodel
 	local Depth
 	local Horizontal
@@ -8342,7 +8340,7 @@ run(function()
 	})
 end)
 	
-run(function()
+task.spawn(function()
 	local WinEffect
 	local List
 	local NameToId = {}

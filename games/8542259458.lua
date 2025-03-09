@@ -1,6 +1,4 @@
-local run = function(func) 
-	func() 
-end
+
 local cloneref = cloneref or function(obj) 
 	return obj 
 end
@@ -16,7 +14,7 @@ local lplr = playersService.LocalPlayer
 local vape = shared.vape
 local sessioninfo = vape.Libraries.sessioninfo
 
-run(function()
+task.spawn(function()
 	local kills = sessioninfo:AddItem('Kills')
 	local eggs = sessioninfo:AddItem('Eggs')
 	local wins = sessioninfo:AddItem('Wins')

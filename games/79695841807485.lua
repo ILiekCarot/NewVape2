@@ -1,4 +1,4 @@
-local run = function(func) func() end
+
 local cloneref = cloneref or function(obj) return obj end
 
 local playersService = cloneref(game:GetService('Players'))
@@ -17,7 +17,7 @@ local prediction = vape.Libraries.prediction
 
 local ad = {}
 
-run(function()
+task.spawn(function()
 	local function searchForScripts(map)
 		local scripts = {}
 		local constants = {}
@@ -88,7 +88,7 @@ run(function()
 end)
 if vape.Loaded == nil then return end
 
-run(function()
+task.spawn(function()
 	local function waitForChildOfType(obj, name, timeout, prop)
 		local checktick = tick() + timeout
 		local returned
@@ -220,7 +220,7 @@ entitylib.start()
 for _, v in {'TriggerBot', 'Invisible', 'Swim', 'TargetStrafe', 'AntiRagdoll', 'Freecam', 'Parkour', 'SafeWalk', 'AntiFall', 'HitBoxes', 'Killaura', 'MurderMystery', 'AnimationPlayer', 'Blink', 'Disabler'} do
 	vape:Remove(v)
 end
-run(function()
+task.spawn(function()
 	
 		local SilentAim
 		local Target
@@ -466,7 +466,7 @@ run(function()
 		})
 end)
 	
-run(function()
+task.spawn(function()
 	local Killaura
 	local Targets
 	local CPS
@@ -736,7 +736,7 @@ run(function()
 	Face = Killaura:CreateToggle({Name = 'Face target'})
 end)
 	
-run(function()
+task.spawn(function()
 	local NoFall
 	local old
 	

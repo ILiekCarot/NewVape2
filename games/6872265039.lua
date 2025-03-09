@@ -1,4 +1,4 @@
-local run = function(func) func() end
+
 local cloneref = cloneref or function(obj) return obj end
 
 local playersService = cloneref(game:GetService('Players'))
@@ -15,7 +15,7 @@ local function notif(...)
 	return vape:CreateNotification(...)
 end
 
-run(function()
+task.spawn(function()
 	local function dumpRemote(tab)
 		local ind = table.find(tab, 'Client')
 		return ind and tab[ind + 1] or ''
@@ -60,7 +60,7 @@ for _, v in vape.Modules do
 	end
 end
 
-run(function()
+task.spawn(function()
 	local Sprint
 	local old
 	
@@ -87,7 +87,7 @@ run(function()
 	})
 end)
 	
-run(function()
+task.spawn(function()
 	local AutoGamble
 	
 	AutoGamble = vape.Categories.Minigames:CreateModule({

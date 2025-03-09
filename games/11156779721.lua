@@ -1,6 +1,4 @@
-local run = function(func) 
-	func() 
-end
+
 local cloneref = cloneref or function(obj) 
 	return obj 
 end
@@ -59,7 +57,7 @@ local function getTool(breakType)
 	return bestTool, bestToolData
 end
 
-run(function()
+task.spawn(function()
 	local function waitForChildOfType(obj, name, timeout, prop)
 		local checktick = tick() + timeout
 		local returned
@@ -141,7 +139,7 @@ run(function()
 end)
 entitylib.start()
 
-run(function()
+task.spawn(function()
 	local InfiniteStamina
 	
 	InfiniteStamina = vape.Categories.Blatant:CreateModule({
@@ -159,7 +157,7 @@ run(function()
 end)
 	
 local Attacking
-run(function()
+task.spawn(function()
 	local Killaura
 	local Targets
 	local Range
@@ -437,7 +435,7 @@ run(function()
 	})
 end)
 	
-run(function()
+task.spawn(function()
 	local NoFall
 	local connections = {}
 	
@@ -471,7 +469,7 @@ run(function()
 	})
 end)
 	
-run(function()
+task.spawn(function()
 	local Speed
 	local Value
 	local WallCheck
@@ -518,7 +516,7 @@ run(function()
 	})
 end)
 	
-run(function()
+task.spawn(function()
 	local AutoEat
 	local Health
 	local eatRemote = replicatedStorage.remoteInterface.interactions.eat
@@ -576,7 +574,7 @@ run(function()
 	})
 end)
 	
-run(function()
+task.spawn(function()
 	local AutoPickup
 	local dropped = workspace.droppedItems
 	local pickupRemote =  replicatedStorage.remoteInterface.inventory.pickupItem
@@ -617,7 +615,7 @@ run(function()
 	})
 end)
 	
-run(function()
+task.spawn(function()
 	local Breaker
 	local BreakerDisable
 	local BreakerPart

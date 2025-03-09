@@ -26,9 +26,7 @@ local function downloadFile(path, func)
 	end
 	return (func or readfile)(path)
 end
-local run = function(func)
-	func()
-end
+
 local queue_on_teleport = queue_on_teleport or function() end
 local cloneref = cloneref or function(obj)
 	return obj
@@ -323,7 +321,7 @@ for name in SpeedMethods do
 	end
 end
 
-run(function()
+task.spawn(function()
 	entitylib.getUpdateConnections = function(ent)
 		local hum = ent.Humanoid
 		return {
@@ -378,7 +376,7 @@ run(function()
 	end))
 end)
 
-run(function()
+task.spawn(function()
 	function whitelist:get(plr)
 		local plrstr = self.hashes[plr.Name..plr.UserId]
 		for _, v in self.data.WhitelistedUsers do
@@ -823,7 +821,7 @@ run(function()
 	end)
 end)
 entitylib.start()
-run(function()
+task.spawn(function()
 	local AimAssist
 	local Targets
 	local Part
@@ -1000,7 +998,7 @@ run(function()
 	})
 end)
 	
-run(function()
+task.spawn(function()
 	local AutoClicker
 	local Mode
 	local CPS
@@ -1043,7 +1041,7 @@ run(function()
 	})
 end)
 	
-run(function()
+task.spawn(function()
 	local Reach
 	local Targets
 	local Mode
@@ -1132,7 +1130,7 @@ run(function()
 end)
 	
 local mouseClicked
-run(function()
+task.spawn(function()
 	local SilentAim
 	local Target
 	local Mode
@@ -1514,7 +1512,7 @@ run(function()
 	})
 end)
 	
-run(function()
+task.spawn(function()
 	local TriggerBot
 	local Targets
 	local ShootDelay
@@ -1597,7 +1595,7 @@ run(function()
 	})
 end)
 	
-run(function()
+task.spawn(function()
 	local AntiFall
 	local Method
 	local Mode
@@ -1723,7 +1721,7 @@ end)
 	
 local Fly
 local LongJump
-run(function()
+task.spawn(function()
 	local Options = {TPTiming = tick()}
 	local Mode
 	local FloatMode
@@ -2062,7 +2060,7 @@ run(function()
 	})
 end)
 	
-run(function()
+task.spawn(function()
 	local HighJump
 	local Mode
 	local Value
@@ -2136,7 +2134,7 @@ run(function()
 	})
 end)
 	
-run(function()
+task.spawn(function()
 	local HitBoxes
 	local Targets
 	local TargetPart
@@ -2186,7 +2184,7 @@ run(function()
 	})
 end)
 	
-run(function()
+task.spawn(function()
 	local Invisible
 	local clone, oldroot, hip, valid
 	local animtrack
@@ -2346,7 +2344,7 @@ run(function()
 	})
 end)
 	
-run(function()
+task.spawn(function()
 	local Killaura
 	local Targets
 	local CPS
@@ -2629,7 +2627,7 @@ run(function()
 	Face = Killaura:CreateToggle({Name = 'Face target'})
 end)
 	
-run(function()
+task.spawn(function()
 	local Mode
 	local Value
 	local AutoDisable
@@ -2692,7 +2690,7 @@ run(function()
 	})
 end)
 	
-run(function()
+task.spawn(function()
 	local MouseTP
 	local Mode
 	local MovementMode
@@ -2812,7 +2810,7 @@ run(function()
 	})
 end)
 	
-run(function()
+task.spawn(function()
 	local Mode
 	local StudLimit = {Object = {}}
 	local rayCheck = RaycastParams.new()
@@ -2955,7 +2953,7 @@ run(function()
 	})
 end)
 	
-run(function()
+task.spawn(function()
 	local Speed
 	local Mode
 	local Options
@@ -3124,7 +3122,7 @@ run(function()
 	})
 end)
 	
-run(function()
+task.spawn(function()
 	local Mode
 	local Value
 	local State
@@ -3227,7 +3225,7 @@ run(function()
 	})
 end)
 	
-run(function()
+task.spawn(function()
 	local SpinBot
 	local Mode
 	local XToggle
@@ -3293,7 +3291,7 @@ run(function()
 	ZToggle = SpinBot:CreateToggle({Name = 'Spin Z'})
 end)
 	
-run(function()
+task.spawn(function()
 	local Swim
 	local terrain = cloneref(workspace:FindFirstChildWhichIsA('Terrain'))
 	local lastpos = Region3.new(Vector3.zero, Vector3.zero)
@@ -3329,7 +3327,7 @@ run(function()
 	})
 end)
 	
-run(function()
+task.spawn(function()
 	local TargetStrafe
 	local Targets
 	local SearchRange
@@ -3448,7 +3446,7 @@ run(function()
 	})
 end)
 	
-run(function()
+task.spawn(function()
 	local Timer
 	local Value
 	
@@ -3477,7 +3475,7 @@ run(function()
 	})
 end)
 	
-run(function()
+task.spawn(function()
 	local Arrows
 	local Targets
 	local Color
@@ -3615,7 +3613,7 @@ run(function()
 	})
 end)
 	
-run(function()
+task.spawn(function()
 	local Chams
 	local Targets
 	local Mode
@@ -3826,7 +3824,7 @@ run(function()
 	})
 end)
 	
-run(function()
+task.spawn(function()
 	local ESP
 	local Targets
 	local Color
@@ -4364,7 +4362,7 @@ run(function()
 	})
 end)
 	
-run(function()
+task.spawn(function()
 	local GamingChair = {Enabled = false}
 	local Color
 	local wheelpositions = {
@@ -4589,7 +4587,7 @@ run(function()
 	})
 end)
 	
-run(function()
+task.spawn(function()
 	local Health
 	
 	Health = vape.Categories.Render:CreateModule({
@@ -4618,7 +4616,7 @@ run(function()
 	})
 end)
 	
-run(function()
+task.spawn(function()
 	local NameTags
 	local Targets
 	local Color
@@ -5031,7 +5029,7 @@ run(function()
 	})
 end)
 	
-run(function()
+task.spawn(function()
 	local PlayerModel
 	local Scale
 	local Local
@@ -5152,7 +5150,7 @@ run(function()
 	
 end)
 	
-run(function()
+task.spawn(function()
 	local Radar
 	local Targets
 	local DotStyle
@@ -5326,7 +5324,7 @@ run(function()
 	})
 end)
 	
-run(function()
+task.spawn(function()
 	local Search
 	local List
 	local Color
@@ -5402,7 +5400,7 @@ run(function()
 	})
 end)
 	
-run(function()
+task.spawn(function()
 	local SessionInfo
 	local FontOption
 	local TextSize
@@ -5561,7 +5559,7 @@ run(function()
 	end)
 end)
 	
-run(function()
+task.spawn(function()
 	local Tracers
 	local Targets
 	local Color
@@ -5762,7 +5760,7 @@ run(function()
 	})
 end)
 	
-run(function()
+task.spawn(function()
 	local Waypoints
 	local FontOption
 	local List
@@ -5869,7 +5867,7 @@ run(function()
 	
 end)
 	
-run(function()
+task.spawn(function()
 	local AnimationPlayer
 	local IDBox
 	local Priority
@@ -5963,7 +5961,7 @@ run(function()
 	})
 end)
 	
-run(function()
+task.spawn(function()
 	local AntiRagdoll
 	
 	AntiRagdoll = vape.Categories.Utility:CreateModule({
@@ -5983,7 +5981,7 @@ run(function()
 	})
 end)
 	
-run(function()
+task.spawn(function()
 	local AutoRejoin
 	local Sort
 	
@@ -6009,7 +6007,7 @@ run(function()
 	})
 end)
 	
-run(function()
+task.spawn(function()
 	local Blink
 	local Type
 	local AutoSend
@@ -6076,7 +6074,7 @@ run(function()
 	})
 end)
 	
-run(function()
+task.spawn(function()
 	local ChatSpammer
 	local Lines
 	local Mode
@@ -6160,7 +6158,7 @@ run(function()
 	})
 end)
 	
-run(function()
+task.spawn(function()
 	local Disabler
 	
 	local function characterAdded(char)
@@ -6186,7 +6184,7 @@ run(function()
 	})
 end)
 	
-run(function()
+task.spawn(function()
 	vape.Categories.Utility:CreateModule({
 		Name = 'Panic',
 		Function = function(callback)
@@ -6202,7 +6200,7 @@ run(function()
 	})
 end)
 	
-run(function()
+task.spawn(function()
 	local Rejoin
 	
 	Rejoin = vape.Categories.Utility:CreateModule({
@@ -6222,7 +6220,7 @@ run(function()
 	})
 end)
 	
-run(function()
+task.spawn(function()
 	local ServerHop
 	local Sort
 	
@@ -6252,7 +6250,7 @@ run(function()
 	})
 end)
 	
-run(function()
+task.spawn(function()
 	local StaffDetector
 	local Mode
 	local Profile
@@ -6394,7 +6392,7 @@ run(function()
 	})
 end)
 	
-run(function()
+task.spawn(function()
 	local connections = {}
 	
 	vape.Categories.World:CreateModule({
@@ -6416,7 +6414,7 @@ run(function()
 	})
 end)
 	
-run(function()
+task.spawn(function()
 	local Freecam
 	local Value
 	local randomkey, module, old = httpService:GenerateGUID(false)
@@ -6488,7 +6486,7 @@ run(function()
 	})
 end)
 	
-run(function()
+task.spawn(function()
 	local Gravity
 	local Mode
 	local Value
@@ -6549,7 +6547,7 @@ run(function()
 	})
 end)
 	
-run(function()
+task.spawn(function()
 	local Parkour
 	
 	Parkour = vape.Categories.World:CreateModule({
@@ -6572,7 +6570,7 @@ run(function()
 	})
 end)
 	
-run(function()
+task.spawn(function()
 	local rayCheck = RaycastParams.new()
 	rayCheck.RespectCanCollide = true
 	local module, old
@@ -6615,7 +6613,7 @@ run(function()
 	})
 end)
 	
-run(function()
+task.spawn(function()
 	local Xray
 	local List
 	local modified = {}
@@ -6655,7 +6653,7 @@ run(function()
 	})
 end)
 	
-run(function()
+task.spawn(function()
 	local MurderMystery
 	local murderer, sheriff, oldtargetable, oldgetcolor
 	
@@ -6727,7 +6725,7 @@ run(function()
 	})
 end)
 	
-run(function()
+task.spawn(function()
 	local Atmosphere
 	local Toggles = {}
 	local newobjects, oldobjects = {}, {}
@@ -6872,7 +6870,7 @@ run(function()
 	end
 end)
 	
-run(function()
+task.spawn(function()
 	local Breadcrumbs
 	local Texture
 	local Lifetime
@@ -6979,7 +6977,7 @@ run(function()
 	})
 end)
 	
-run(function()
+task.spawn(function()
 	local Cape
 	local Texture
 	local part, motor
@@ -7059,7 +7057,7 @@ run(function()
 	})
 end)
 	
-run(function()
+task.spawn(function()
 	local ChinaHat
 	local Material
 	local Color
@@ -7139,7 +7137,7 @@ run(function()
 	})
 end)
 	
-run(function()
+task.spawn(function()
 	local Clock
 	local TwentyFourHour
 	local label
@@ -7190,7 +7188,7 @@ run(function()
 	corner.Parent = label
 end)
 	
-run(function()
+task.spawn(function()
 	local Disguise
 	local Mode
 	local IDBox
@@ -7361,7 +7359,7 @@ run(function()
 	})
 end)
 	
-run(function()
+task.spawn(function()
 	local FOV
 	local Value
 	local oldfov
@@ -7388,7 +7386,7 @@ run(function()
 	})
 end)
 	
-run(function()
+task.spawn(function()
 	--[[
 		Grabbing an accurate count of the current framerate
 		Source: https://devforum.roblox.com/t/get-client-FPS-trough-a-script/282631
@@ -7449,7 +7447,7 @@ run(function()
 	corner.Parent = label
 end)
 	
-run(function()
+task.spawn(function()
 	local Keystrokes
 	local Style
 	local Color
@@ -7585,7 +7583,7 @@ run(function()
 	})
 end)
 	
-run(function()
+task.spawn(function()
 	local Memory
 	local label
 	
@@ -7632,7 +7630,7 @@ run(function()
 	corner.Parent = label
 end)
 	
-run(function()
+task.spawn(function()
 	local Ping
 	local label
 	
@@ -7679,7 +7677,7 @@ run(function()
 	corner.Parent = label
 end)
 	
-run(function()
+task.spawn(function()
 	local SongBeats
 	local List
 	local FOV
@@ -7802,7 +7800,7 @@ run(function()
 	})
 end)
 	
-run(function()
+task.spawn(function()
 	local Speedmeter
 	local label
 	
@@ -7851,7 +7849,7 @@ run(function()
 	corner.Parent = label
 end)
 	
-run(function()
+task.spawn(function()
 	local TimeChanger
 	local Value
 	local old
