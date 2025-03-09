@@ -11,7 +11,7 @@
   Rise up to the top while remaining completely untouchable.
 </h2>
 
-## Contacts
+## Contacts OLD
 [Discord](https://discord.gg/ZqS836yx9k)
 <br/>
 [Youtube](https://youtube.com/c/7GrandDadVape)
