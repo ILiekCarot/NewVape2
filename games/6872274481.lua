@@ -4028,7 +4028,7 @@ task.spawn(function()
 	})
 end)
 	
-task.spawn(function()
+--[[task.spawn(function()
 	local AutoKit
 	local Legit
 	local Toggles = {}
@@ -4423,7 +4423,7 @@ task.spawn(function()
 			Default = true
 		})
 	end
-end)
+end)]]
 	
 task.spawn(function()
 	local AutoPearl
@@ -5821,7 +5821,7 @@ task.spawn(function()
 	})
 end)
 	
-task.spawn(function()
+--[[task.spawn(function()
 	local AutoBuy
 	local Sword
 	local Armor
@@ -5951,7 +5951,7 @@ task.spawn(function()
 		for i = tool, #tools do
 			local v = bedwars.Shop.getShopItem(tools[i], lplr)
 			if canBuy(v, currencytable) then
-				if SmartCheck.Enabled and bedwars.ItemMeta[tools[i]].breakBlock and i > 2 then
+				if SmartCheck.Enabled and bedwars.ItemMeta[ tools[i] ].breakBlock and i > 2 then
 					if Armor.Enabled then
 						local currentarmor = store.inventory.inventory.armor[2]
 						currentarmor = currentarmor and currentarmor ~= 'empty' and currentarmor.itemType or 'none'
@@ -6154,7 +6154,7 @@ task.spawn(function()
 			end
 		end
 	})
-end)
+end)]]
 	
 task.spawn(function()
 	local AutoConsume
@@ -6236,7 +6236,7 @@ task.spawn(function()
 	})
 end)
 	
-task.spawn(function()
+--[[task.spawn(function()
 	local AutoHotbar
 	local Mode
 	local Clear
@@ -6814,7 +6814,7 @@ task.spawn(function()
 	})
 	Clear = AutoHotbar:CreateToggle({Name = 'Clear Hotbar'})
 	List = AutoHotbar:CreateHotbarList({})
-end)
+end)]]
 	
 task.spawn(function()
 	local Value
@@ -7711,7 +7711,7 @@ task.spawn(function()
 	})
 end)
 	
-task.spawn(function()
+--[[task.spawn(function()
 	local KillEffect
 	local Mode
 	local List
@@ -7875,7 +7875,7 @@ task.spawn(function()
 		end,
 		Darker = true
 	})
-end)
+end)]]
 	
 task.spawn(function()
 	local ReachDisplay
@@ -8340,7 +8340,7 @@ task.spawn(function()
 	})
 end)
 	
-task.spawn(function()
+--[[task.spawn(function()
 	local WinEffect
 	local List
 	local NameToId = {}
@@ -8373,5 +8373,5 @@ task.spawn(function()
 		Name = 'Effects',
 		List = WinEffectName
 	})
-end)
+end)]]
 	
