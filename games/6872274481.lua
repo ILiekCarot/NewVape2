@@ -7266,7 +7266,7 @@ task.spawn(function()
 		Default = 60,
 		Suffix = 'hz'
 	})
-	Custom = Breaker:CreateTextList({
+	--[[Custom = Breaker:CreateTextList({
 		Name = 'Custom',
 		Function = function()
 			if not customlist then return end
@@ -7277,7 +7277,7 @@ task.spawn(function()
 				end
 			end
 		end
-	})
+	})]]
 	Bed = Breaker:CreateToggle({
 		Name = 'Break Bed',
 		Default = true
