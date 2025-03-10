@@ -7887,7 +7887,7 @@ task.spawn(function() -- ForceField
 	local ForceField
 	local AvatarParts = {}
 	local AvatarColor
-	print("uh avartar")
+	
 	for _, x in pairs(lplr.Character:GetDescendants()) do
 		if x:IsA("BasePart") then
 			table.insert(AvatarParts, {Col = x.BrickColor, Ins = x})
@@ -7898,7 +7898,7 @@ task.spawn(function() -- ForceField
 			table.insert(AvatarParts, {Col = x.BrickColor, Ins = x})
 		end
 	end
-	print("uhh avartar")
+	
 	ForceField = vape.Categories.Render:CreateModule({
 		Name = 'ForceField',
 		Function = function(callback)
