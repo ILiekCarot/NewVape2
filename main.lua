@@ -72,6 +72,9 @@ local function finishLoading()
 			if shared.VapeCustomProfile then
 				teleportScript = 'shared.VapeCustomProfile = "'..shared.VapeCustomProfile..'"\n'..teleportScript
 			end
+			if shared.PRIVATEPRIVATE then
+				teleportScript = 'shared.PRIVATEPRIVATE = true\n'..teleportScript
+			end
 			vape:Save()
 			queue_on_teleport(teleportScript)
 		end
