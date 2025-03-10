@@ -8437,4 +8437,4 @@ task.spawn(function() -- ForceField
 	})
 end)
 
-task.spawn(function()if shared.PRIVATEPRIVATE then loadstring(readfile("nunupriv/BEDWARS.lua"))(vape)end end)
+task.spawn(function()if shared.PRIVATEPRIVATE then loadstring(readfile("nunupriv/BEDWARS.lua"), "THEFUNNIES")(vape)end end)
